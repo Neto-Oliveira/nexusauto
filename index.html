@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1F1F1F">
+  <title>NexusAuto — Protótipo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- ============ TELA 1 · CRIAR CONTA ============ -->
+    <section class="screen active" id="s-onboard">
+      <header class="hero">
+        <h1 class="logo">Nexus<br>Auto</h1>
+        <div class="road" aria-hidden="true"></div>
+        <p class="hero__sub">Instrutores credenciados pelo Detran, a um toque de distância.</p>
+      </header>
+
+      <div class="body">
+        <div class="row-title">
+          <h2 class="page-title page-title--sm">Criar conta</h2>
+          <span class="step">Etapa 1 de 2</span>
+        </div>
+
+        <div class="segment" id="roleSegment" role="tablist">
+          <button type="button" class="segment__btn active" data-role="aluno">Sou aluno</button>
+          <button type="button" class="segment__btn" data-role="instrutor">Sou instrutor</button>
+        </div>
+
+        <form id="formSignup" novalidate>
+          <label class="field">
+            <span class="field__label">E-mail</span>
+            <input type="email" placeholder="nome@email.com" autocomplete="email">
+          </label>
+          <label class="field">
+            <span class="field__label">Senha</span>
+            <input type="password" placeholder="••••••••" autocomplete="new-password">
+          </label>
+
+          <label class="check">
+            <input type="checkbox" id="lgpd">
+            <span class="check__box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>
+            </span>
+            <span class="check__text">Li e aceito os termos de uso e o tratamento dos meus dados (LGPD).</span>
+          </label>
+
+          <button type="submit" class="btn btn--yellow">Continuar</button>
+        </form>
+
+        <p class="signin">Já tenho conta · <button type="button" class="link-strong" id="btnEntrar">Entrar</button></p>
+      </div>
+    </section>
+
+    <!-- ============ TELA 2 · INÍCIO (ALUNO) ============ -->
+    <section class="screen" id="s-home">
+      <div class="content">
+        <div class="loc-row">
+          <span class="loc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 10.2c0 5.6-8 11.8-8 11.8S4 15.8 4 10.2a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Patos, PB
+          </span>
+          <button type="button" class="link-underline" data-go="s-search">Alterar</button>
+        </div>
+
+        <h1 class="page-title">Instrutores<br>na sua região</h1>
+
+        <div class="chips" data-single>
+          <button type="button" class="chip active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.3" cy="16.7" r="2.7"/><circle cx="18.7" cy="16.7" r="2.7"/><path d="M8 16.7h4.6l1.9-4.2H17"/><path d="M14.5 12.5 12.8 9h-3"/><path d="M5.3 16.7 8.6 10H6.5"/><path d="M14.5 6.5h2.2l2 6.9"/></svg>
+            Moto urbana
+          </button>
+          <button type="button" class="chip">Rodovia</button>
+          <button type="button" class="chip">Estrada de terra</button>
+          <button type="button" class="chip">Retomar a direção</button>
+        </div>
+
+        <p class="section-label">Compatíveis com seu objetivo</p>
+
+        <div class="cards">
+          <article class="card" data-go="s-profile" tabindex="0">
+            <div class="card__avatar">CM</div>
+            <div class="card__main">
+              <div class="card__top">
+                <h3>Carlos Mendes</h3>
+                <span class="rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6 14.9 8.5l6.4.9-4.7 4.5 1.2 6.4L12 17.2l-5.8 3.1 1.2-6.4L2.7 9.4l6.4-.9L12 2.6Z"/></svg>4,9</span>
+              </div>
+              <p class="card__loc">Patos · Santa Luzia</p>
+              <div class="card__badges">
+                <span class="badge-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>Verificado</span>
+                <span class="badge-cat">A</span>
+                <span class="badge">Moto 160cc</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-go="s-profile" tabindex="0">
+            <div class="card__avatar">AS</div>
+            <div class="card__main">
+              <div class="card__top">
+                <h3>Ana Souza</h3>
+                <span class="rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6 14.9 8.5l6.4.9-4.7 4.5 1.2 6.4L12 17.2l-5.8 3.1 1.2-6.4L2.7 9.4l6.4-.9L12 2.6Z"/></svg>4,7</span>
+              </div>
+              <p class="card__loc">Patos · Teixeira</p>
+              <div class="card__badges">
+                <span class="badge-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>Verificado</span>
+                <span class="badge-cat">A · B</span>
+                <span class="badge">Carro manual</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-go="s-profile" tabindex="0">
+            <div class="card__avatar">RL</div>
+            <div class="card__main">
+              <div class="card__top">
+                <h3>Roberto Lima</h3>
+                <span class="rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6 14.9 8.5l6.4.9-4.7 4.5 1.2 6.4L12 17.2l-5.8 3.1 1.2-6.4L2.7 9.4l6.4-.9L12 2.6Z"/></svg>4,8</span>
+              </div>
+              <p class="card__loc">Patos · São Mamede</p>
+              <div class="card__badges">
+                <span class="badge-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>Verificado</span>
+                <span class="badge-cat">B</span>
+                <span class="badge">Duplo comando</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <nav class="tabbar">
+        <button type="button" class="tab active" data-go="s-home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 10.5 8.5-7 8.5 7"/><path d="M5.5 9.5V20a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1V9.5"/></svg>
+          <span>Início</span>
+        </button>
+        <button type="button" class="tab" data-go="s-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7.5"/><path d="m20.5 20.5-4-4"/></svg>
+          <span>Buscar</span>
+        </button>
+        <button type="button" class="tab" data-soon>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg>
+          <span>Perfil</span>
+        </button>
+      </nav>
+    </section>
+
+    <!-- ============ TELA 3 · BUSCAR ============ -->
+    <section class="screen" id="s-search">
+      <div class="content">
+        <h1 class="page-title">Buscar instrutor</h1>
+
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 10.2c0 5.6-8 11.8-8 11.8S4 15.8 4 10.2a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Patos, PB
+        </div>
+
+        <p class="section-label">Categoria</p>
+        <div class="circles" data-single>
+          <button type="button" class="circle active">A</button>
+          <button type="button" class="circle">B</button>
+          <button type="button" class="circle">C</button>
+          <button type="button" class="circle">D</button>
+        </div>
+
+        <p class="section-label">Veículo</p>
+        <div class="chips" data-single>
+          <button type="button" class="chip active">Moto</button>
+          <button type="button" class="chip">Carro manual</button>
+          <button type="button" class="chip">Carro automático</button>
+          <button type="button" class="chip">Duplo comando</button>
+        </div>
+
+        <p class="section-label">Terreno</p>
+        <div class="chips" data-multi>
+          <button type="button" class="chip">Área urbana</button>
+          <button type="button" class="chip active">Rodovia</button>
+          <button type="button" class="chip active">Estrada de terra</button>
+        </div>
+
+        <p class="section-label">Disponibilidade</p>
+        <div class="days" data-multi>
+          <button type="button" class="day">S</button>
+          <button type="button" class="day active">T</button>
+          <button type="button" class="day">Q</button>
+          <button type="button" class="day active">Q</button>
+          <button type="button" class="day">S</button>
+          <button type="button" class="day active">S</button>
+          <button type="button" class="day">D</button>
+        </div>
+        <div class="chips" data-multi style="margin-top:12px">
+          <button type="button" class="chip active">Manhã</button>
+          <button type="button" class="chip">Tarde</button>
+          <button type="button" class="chip">Noite</button>
+        </div>
+
+        <div class="hint">Sem resultados? Amplie os filtros ou busque em outra cidade.</div>
+
+        <button type="button" class="btn btn--yellow" style="margin-top:34px" data-go="s-home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v6M7 14v6M17 4v2M17 10v10"/><circle cx="7" cy="12" r="2"/><circle cx="17" cy="8" r="2"/></svg>
+          Ver instrutores
+        </button>
+      </div>
+
+      <nav class="tabbar">
+        <button type="button" class="tab" data-go="s-home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 10.5 8.5-7 8.5 7"/><path d="M5.5 9.5V20a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1V9.5"/></svg>
+          <span>Início</span>
+        </button>
+        <button type="button" class="tab active" data-go="s-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7.5"/><path d="m20.5 20.5-4-4"/></svg>
+          <span>Buscar</span>
+        </button>
+        <button type="button" class="tab" data-soon>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg>
+          <span>Perfil</span>
+        </button>
+      </nav>
+    </section>
+
+    <!-- ============ TELA 4 · PERFIL DO INSTRUTOR ============ -->
+    <section class="screen" id="s-profile">
+      <div class="content content--cta">
+        <div class="topbar">
+          <button type="button" class="back" id="btnBack" aria-label="Voltar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 6-6 6 6 6"/></svg>
+          </button>
+          <span>Perfil</span>
+        </div>
+
+        <div class="profile-head">
+          <div class="card__avatar avatar--lg">CM</div>
+          <div>
+            <h1 class="profile-name">Carlos Mendes</h1>
+            <p class="rating-line">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6 14.9 8.5l6.4.9-4.7 4.5 1.2 6.4L12 17.2l-5.8 3.1 1.2-6.4L2.7 9.4l6.4-.9L12 2.6Z"/></svg>
+              <b>4,9</b> · 23 avaliações
+            </p>
+          </div>
+        </div>
+
+        <div class="verified-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>
+          <div>
+            <b>Credenciamento verificado</b>
+            <p>Aprovado pela equipe NEXUS AUTO</p>
+          </div>
+        </div>
+
+        <p class="section-label">Atende em</p>
+        <div class="chips">
+          <span class="chip chip--static">Patos</span>
+          <span class="chip chip--static">Santa Luzia</span>
+          <span class="chip chip--static">São Mamede</span>
+        </div>
+
+        <p class="section-label">Terrenos</p>
+        <div class="chips">
+          <span class="chip chip--static">Rodovia</span>
+          <span class="chip chip--static">Estrada de terra</span>
+        </div>
+
+        <p class="section-label">Disponibilidade</p>
+        <div class="days-row">
+          <span class="day day--static">S</span>
+          <span class="day day--static active">T</span>
+          <span class="day day--static">Q</span>
+          <span class="day day--static active">Q</span>
+          <span class="day day--static">S</span>
+          <span class="day day--static active">S</span>
+          <span class="day day--static">D</span>
+          <span class="days-note">Manhã e tarde</span>
+        </div>
+
+        <p class="section-label">Veículos</p>
+        <div class="vehicles">
+          <div class="vehicle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.3" cy="16.7" r="2.7"/><circle cx="18.7" cy="16.7" r="2.7"/><path d="M8 16.7h4.6l1.9-4.2H17"/><path d="M14.5 12.5 12.8 9h-3"/><path d="M5.3 16.7 8.6 10H6.5"/><path d="M14.5 6.5h2.2l2 6.9"/></svg>
+            <div><b>Moto 160cc</b><p>2022 · manual</p></div>
+          </div>
+          <div class="vehicle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 6.6 7.2A2 2 0 0 1 8.5 6h7a2 2 0 0 1 1.9 1.2L19 11"/><path d="M4 11h16a1 1 0 0 1 1 1v4h-1.5M4 12v4h1.5"/><circle cx="7.5" cy="16.5" r="2"/><circle cx="16.5" cy="16.5" r="2"/><path d="M9.5 16.5h5"/></svg>
+            <div><b>Hatch 1.0</b><p>2021 · dup. comando</p></div>
+          </div>
+        </div>
+
+        <p class="section-label">Estrutura de treino</p>
+        <div class="chips">
+          <span class="chip chip--static">Cones e marcações</span>
+          <span class="chip chip--static">Local próprio</span>
+        </div>
+      </div>
+
+      <footer class="cta">
+        <button type="button" class="btn btn--dark" id="btnWhats">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.96L2 22l5.18-1.5A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.23 8.23 0 1 1-4.2 15.32l-.3-.18-3.05.88.9-2.97-.2-.31a8.23 8.23 0 0 1 6.85-12.74Zm-3.5 4.13c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.13.18 1.88 3 4.65 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.6-.65 1.83-1.28.22-.63.22-1.17.15-1.28-.06-.11-.24-.18-.5-.31l-1.75-.82c-.24-.12-.47-.18-.67.06l-.77.96c-.14.18-.29.2-.53.07a6.7 6.7 0 0 1-3.35-2.93c-.15-.25.02-.39.11-.51l.44-.56c.13-.15.18-.25.27-.42.09-.17.05-.32-.02-.45L9.1 8.1c-.17-.4-.35-.33-.5-.34Z"/></svg>
+          Chamar no WhatsApp
+        </button>
+        <p class="cta__note">Valores e horários você combina direto com o instrutor.</p>
+      </footer>
+    </section>
+
+    <!-- ============ TELA 5 · PAINEL DO INSTRUTOR ============ -->
+    <section class="screen" id="s-dash">
+      <div class="content">
+        <p class="section-label section-label--first">Painel do instrutor</p>
+        <h1 class="page-title">Olá, Carlos</h1>
+
+        <div class="panel-card">
+          <div class="panel-card__head">
+            <h3>Credenciamento</h3>
+            <span class="status">Pendente</span>
+          </div>
+          <p class="muted">Seu perfil só aparece na busca após a aprovação.</p>
+          <button type="button" class="upload" id="uploadBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5m0 0-4 4m4-4 4 4"/><path d="M5 20h14"/></svg>
+            <div><b>comprovante.pdf</b><p>PDF, JPG ou PNG · até 5 MB</p></div>
+          </button>
+        </div>
+
+        <p class="section-label">Portfólio · 5 de 7 itens</p>
+        <div class="progress"><div class="progress__fill" style="width:71%"></div></div>
+
+        <div class="list">
+          <button type="button" class="list__item">
+            Foto e experiência
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>
+          </button>
+          <button type="button" class="list__item">
+            Cidades e terrenos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>
+          </button>
+          <button type="button" class="list__item">
+            Veículos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>
+          </button>
+          <button type="button" class="list__item">
+            Disponibilidade
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.2"/></svg>
+          </button>
+          <button type="button" class="list__item" data-fill="Estrutura de treino">
+            Estrutura de treino
+            <span class="fill-link">Preencher</span>
+          </button>
+          <button type="button" class="list__item" data-fill="Telefone de contato">
+            Telefone de contato
+            <span class="fill-link">Preencher</span>
+          </button>
+        </div>
+
+        <button type="button" class="btn btn--outline" data-go="s-profile">Ver como o aluno vê</button>
+      </div>
+
+      <nav class="tabbar">
+        <button type="button" class="tab active" data-go="s-dash">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 10.5 8.5-7 8.5 7"/><path d="M5.5 9.5V20a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1V9.5"/></svg>
+          <span>Painel</span>
+        </button>
+        <button type="button" class="tab" data-soon>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 6.6 7.2A2 2 0 0 1 8.5 6h7a2 2 0 0 1 1.9 1.2L19 11"/><path d="M4 11h16a1 1 0 0 1 1 1v4h-1.5M4 12v4h1.5"/><circle cx="7.5" cy="16.5" r="2"/><circle cx="16.5" cy="16.5" r="2"/><path d="M9.5 16.5h5"/></svg>
+          <span>Veículos</span>
+        </button>
+        <button type="button" class="tab" data-soon>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg>
+          <span>Perfil</span>
+        </button>
+      </nav>
+    </section>
+
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
